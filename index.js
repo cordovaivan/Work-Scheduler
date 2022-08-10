@@ -5,7 +5,7 @@ var timeBlocks = $(".time-block");
 $("#currentDay").text(now.format("dddd, MMM Do YYYY"));
 
 function hourUpdate() {
-    var currentHour = 15;
+    var currentHour = moment().hour();
     console.log(currentHour);
 
     timeBlocks.each(function(index) {

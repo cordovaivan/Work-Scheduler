@@ -9,27 +9,28 @@ function hourUpdate() {
     console.log(currentHour);
 
     timeBlocks.each(function(index) {
-        var Blockhour = parseInt($(timeBlocks).attr("id").split("")[0]);
+        var Blockhour = parseInt($(this).attr("id"));
 
         if (Blockhour < currentHour) {
             timeBlocks.addClass("past");
             timeBlocks.removeClass("future");
             timeBlocks.removeClass("present");
-        };
+        }
 
-        if (Blockhour > currentHour) {
-            timeBlocks.addClass("future");
-            timeBlocks.removeClass("present");
-            timeBlocks.removeClass("past");
-        };
+        if else (Blockhour > currentHour) {
+            $(this).addClass("future");
+            $(this).removeClass("present");
+            $(this).removeClass("past");
+        }
 
-        if (Blockhour == currentHour) {
-            timeBlocks.addClass("present");
-            timeBlocks.removeClass("past");
-            timeBlocks.removeClass("future");
+        else (Blockhour == currentHour) {
+            $(this).addClass("present");
+            $(this).removeClass("past");
+            $(this).removeClass("future");
         };
     });
 };
+
 
 hourUpdate();
 

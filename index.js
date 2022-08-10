@@ -8,7 +8,7 @@ function hourUpdate() {
     var currentHour = moment().hour();
     console.log(currentHour);
 
-    timeBlocks.each(function() {
+    timeBlocks.each(function(index) {
         var Blockhour = parseInt($(timeBlocks).attr("id").split("")[0]);
 
         if (Blockhour < currentHour) {
@@ -30,6 +30,8 @@ function hourUpdate() {
         };
     });
 };
+
+hourUpdate();
 
 // console.log(currentHour);
 

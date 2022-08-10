@@ -5,25 +5,23 @@ var timeBlocks = $(".time-block");
 $("#currentDay").text(now.format("dddd, MMM Do YYYY"));
 
 function hourUpdate() {
-    var currentHour = moment().hour();
+    var currentHour = 15;
     console.log(currentHour);
 
     timeBlocks.each(function(index) {
         var Blockhour = parseInt($(this).attr("id"));
+        console.log(Blockhour);
 
         if (Blockhour < currentHour) {
-            timeBlocks.addClass("past");
-            timeBlocks.removeClass("future");
-            timeBlocks.removeClass("present");
-        }
-
-        if else (Blockhour > currentHour) {
+            console.log(Blockhour, currentHour ,(Blockhour < currentHour));
+            $(this).addClass("past");
+            $(this).removeClass("future");
+            $(this).removeClass("present");
+        }else if (Blockhour > currentHour) {
             $(this).addClass("future");
             $(this).removeClass("present");
             $(this).removeClass("past");
-        }
-
-        else (Blockhour == currentHour) {
+        }else {
             $(this).addClass("present");
             $(this).removeClass("past");
             $(this).removeClass("future");

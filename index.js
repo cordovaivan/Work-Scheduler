@@ -32,29 +32,25 @@ function hourUpdate() {
 
 hourUpdate();
 
-// console.log(currentHour);
-
-// var Blockhour = parseInt($(timeBlocks).attr("id").split("")[0]);
-
-// console.log(Blockhour);
-
-// timeBlocks.each(function() {
-//     var Blockhour = $(timeBlocks).attr("id").split("")[0];
-
-//     if (Blockhour < currentHour) {
-//         timeBlocks.addClass("past");
-//     };
-
-//     if (Blockhour > currentHour) {
-//         timeBlocks.addClass("future");
-//     };
-
-//     if (Blockhour == currentHour) {
-//         timeBlocks.addClass("present");
-//     };
-// });
-
-// console.log(Blockhour);
 
 
+function eventHandler(event) {
+    event.preventDefault();
+
+    const inpKey = localStorage.setItem('event', "");
+    const inpValue = document.getElementsById("event");
+    const saveBtn = document.getElementById("save");
+
+    saveBtn.onclick = function () {
+        const key = inpKey.value;
+        const value = inpValue.value;
+
+        if (key && value) {
+            localStorage.setItem(key, value);
+    
+        }
+    }
+
+
+};
 
